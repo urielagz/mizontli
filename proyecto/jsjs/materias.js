@@ -1,5 +1,4 @@
 const materias = {
-
 matematicas:{
 nombre:"Matemáticas",
 temario:[
@@ -178,12 +177,9 @@ temario:[
 
 
 
-
-// Busca los parámetros de la URL
 const parametros = new URLSearchParams(window.location.search);
 const materia = parametros.get("materia");
 const tema = parametros.get("tema");
-
 const botonVolver = document.getElementById("volver");
 
 if (botonVolver) {
@@ -191,124 +187,56 @@ if (botonVolver) {
         window.location.href = `temario.html?materia=${materia}`;
     };
 }
-
 if(document.getElementById("tema")==null){
-
     document.getElementById("titulo").innerHTML =
     materias[materia].nombre;
-
-    const contenido =
-    document.getElementById("contenido");
-
-    materias[materia].temario.forEach(t=>{
-
-        contenido.innerHTML +=`
-
+    const contenido = document.getElementById("contenido");
+    materias[materia].temario.forEach(t=>{ contenido.innerHTML +=`
         <div class="tarjeta">
-
             <h2>${t.nombre}</h2>
-
-            <button onclick="window.location.href='materia.html?materia=${materia}&tema=${t.id}'">
-
-            Comenzar
-
-            </button>
-
+            <button onclick="window.location.href='materia.html?materia=${materia}&tema=${t.id}'">Comenzar</button>
         </div>
-
         `;
-
     });
-
 }
 
 else{
-
     const datos =
     materias[materia].temario.find(
         t => t.id == tema
     );
-
-    document.getElementById("titulo").innerHTML =
-    materias[materia].nombre;
-
-    document.getElementById("tema").innerHTML =
-    datos.nombre;
-
-    const contenido =
-    document.getElementById("contenido");
-
-// ACTIVIDADES
+    document.getElementById("titulo").innerHTML =materias[materia].nombre;
+    document.getElementById("tema").innerHTML =datos.nombre;
+    const contenido =document.getElementById("contenido");
 
 datos.actividades.forEach(act => {
-
     const nombre = typeof act === "string" ? act : act.nombre;
-    const id = typeof act === "string"
-        ? act.toLowerCase().replace(/\s+/g, "")
-        : act.id;
-
+    const id = typeof act === "string"? act.toLowerCase().replace(/\s+/g, ""): act.id;
     contenido.innerHTML += `
-
+    
     <div class="tarjeta">
-
         <h3>${nombre}</h3>
-
-        <button onclick="abrirActividad('${id}')">
-
-            Abrir
-
-        </button>
-
+        <button onclick="abrirActividad('${id}')">Abrir</button>
     </div>
-
     `;
-
 });
 
-// APOYO
-
 if (datos.apoyo) {
-
     datos.apoyo.forEach(ap => {
-
         const nombre = typeof ap === "string" ? ap : ap.nombre;
-        const id = typeof ap === "string"
-            ? ap.toLowerCase().replace(/\s+/g, "")
-            : ap.id;
-
+        const id = typeof ap === "string"? ap.toLowerCase().replace(/\s+/g, ""): ap.id;
         contenido.innerHTML += `
-
         <div class="tarjeta">
-
             <h3>${nombre}</h3>
-
-            <button onclick="abrirApoyo('${id}')">
-
-                Abrir
-
-            </button>
-
+            <button onclick="abrirApoyo('${id}')">Abrir</button>
         </div>
-
         `;
-
     });
-
 }
-
 }
-
 function abrirActividad(id){
-
-    window.location.href =
-    `actividad.html?materia=${materia}&tema=${tema}&actividad=${id}`;
-
+    window.location.href =`actividad.html?materia=${materia}&tema=${tema}&actividad=${id}`;
 }
-
 function abrirApoyo(id){
-
-    window.location.href =
-    `apoyo.html?materia=${materia}&tema=${tema}&apoyo=${id}`;
-
+    window.location.href =`apoyo.html?materia=${materia}&tema=${tema}&apoyo=${id}`;
 }
-

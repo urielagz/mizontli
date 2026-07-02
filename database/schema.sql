@@ -46,7 +46,7 @@ CREATE TABLE Actividad (
 	titulo VARCHAR  (100) NOT NULL,
 	descripcion TEXT,
 	fecha_entrega TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	id_materia INTEGER NOT NULL REFERENCES Materia(id_materia) ON DELETE CASCADE
+	id_tema INTEGER NOT NULL REFERENCES Tema(id_tema) ON DELETE CASCADE
 );
 --=============================
 --Creacion Tabla Actividad_completada
@@ -68,7 +68,7 @@ CREATE TABLE Evaluacion (
 	descripcion TEXT,
 	lim_tiempo INTEGER,
 	fecha_lim TIMESTAMP,
-	id_materia INTEGER NOT NULL REFERENCES Materia (id_materia) ON DELETE CASCADE,
+	id_tema INTEGER NOT NULL REFERENCES Tema (id_tema) ON DELETE CASCADE,
 	id_usuario INTEGER NOT NULL REFERENCES Usuario(id_usuario) ON DELETE CASCADE
 );
 --==========================
@@ -90,7 +90,7 @@ CREATE TABLE Recurso (
 	tipo tipo_recurso NOT NULL,
 	url_archivo VARCHAR(255) NOT NULL,
 	fecha_publicacion TIMESTAMP NOT NULL DEFAULT NOW(),
-	id_materia INTEGER NOT NULL REFERENCES Materia(id_materia) ON DELETE CASCADE,
+	id_tema INTEGER NOT NULL REFERENCES Tema(id_tema) ON DELETE CASCADE,
 	id_usuario INTEGER NOT NULL REFERENCES Usuario(id_usuario) ON DELETE CASCADE
 );
 --===========================
@@ -102,6 +102,7 @@ CREATE TABLE Progreso (
 	evaluaciones_completas INTEGER NOT NULL DEFAULT 0,
 	ultima_actualizacion TIMESTAMP NOT NULL DEFAULT NOW(),
 	id_usuario INTEGER NOT NULL REFERENCES Usuario(id_usuario)
+	id_materia INTEGER NOT NULL REFERENCES Materia(id_materia) ON DELETE CASCADE,
 );
 --========================
 --Creacion Tabla Publicacion

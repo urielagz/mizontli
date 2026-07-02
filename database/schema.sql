@@ -40,6 +40,15 @@ CREATE TABLE UsuarioMateria (
 	UNIQUE (id_usuario, id_materia)
 );
 --=============================
+--Creacion Tabla Tema
+CREATE TABLE Tema (
+	id_tema SERIAL PRIMARY KEY,
+	nombre VARCHAR(150) NOT NULL,
+	descripcion TEXT,
+	orden INTEGER,
+	id_materia INTEGER NOT NULL REFERENCES Materia(id_materia) ON DELETE CASCADE
+)-
+--=============================
 --Creacion Tabla Actividad
 CREATE TABLE Actividad (
 	id_actividad SERIAL PRIMARY KEY,
@@ -101,8 +110,8 @@ CREATE TABLE Progreso (
 	act_completas INTEGER NOT NULL DEFAULT 0,
 	evaluaciones_completas INTEGER NOT NULL DEFAULT 0,
 	ultima_actualizacion TIMESTAMP NOT NULL DEFAULT NOW(),
-	id_usuario INTEGER NOT NULL REFERENCES Usuario(id_usuario)
-	id_materia INTEGER NOT NULL REFERENCES Materia(id_materia) ON DELETE CASCADE,
+	id_usuario INTEGER NOT NULL REFERENCES Usuario(id_usuario) ON DELETE CASCADE,
+	id_materia INTEGER NOT NULL REFERENCES Materia(id_materia) ON DELETE CASCADE
 );
 --========================
 --Creacion Tabla Publicacion

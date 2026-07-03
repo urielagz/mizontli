@@ -10,7 +10,7 @@ export const pool = new Pool({
 pool.connect()
     .then(async (cliente) => {
 
-        console.log("✅ PostgreSQL conectado");
+        console.log(" PostgreSQL conectado");
 
         const resultado = await cliente.query("SELECT NOW()");
 
@@ -22,7 +22,7 @@ pool.connect()
     })
     .catch(error => {
 
-        console.error("❌ Error al conectar PostgreSQL");
+        console.error(" Error al conectar PostgreSQL");
 
         console.error(error);
 

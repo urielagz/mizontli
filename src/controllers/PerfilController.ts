@@ -15,7 +15,7 @@ export class PerfilController {
             };
         }
 
-        // SAFE: ya validamos que existe
+        
         const safeUser = {
             id_usuario: user.id_usuario,
             nombre: user.nombre,

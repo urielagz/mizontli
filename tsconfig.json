@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "compilerOptions": {
     "target": "ES2020",
@@ -9,3 +10,16 @@
     "skipLibCheck": true
   }
 }
+=======
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}
+>>>>>>> 9debb0c734493963ec40a4dbf27c5cdfad79f63f

@@ -65,4 +65,8 @@ export class EntregaController {
         res.json({ ok, mensaje: ok ? "Entrega eliminada" : "Entrega no encontrada" });
     };
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9debb0c734493963ec40a4dbf27c5cdfad79f63f

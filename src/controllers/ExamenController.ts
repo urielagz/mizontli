@@ -41,4 +41,8 @@ export class ExamenController {
         const ok = await repo.eliminar(Number(req.params.id));
         res.json({ ok, mensaje: ok ? "Eliminado" : "No encontrado" });
     };
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9debb0c734493963ec40a4dbf27c5cdfad79f63f

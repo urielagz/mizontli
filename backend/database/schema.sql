@@ -143,5 +143,16 @@ CREATE TABLE Notificacion (
 	fecha_lectura TIMESTAMP,
 	id_usuario INTEGER NOT NULL REFERENCES Usuario (id_usuario) ON DELETE CASCADE
 );
+CREATE TABLE DocenteEspera (
+	id_solicitud SERIAL PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	apellido VARCHAR(50) NOT NULL,
+	correo VARCHAR(100) NOT NULL UNIQUE,
+	cedula_profesional VARCHAR(255) NOT NULL,
+	diploma VARCHAR(255) NOT NULL,
+	estado estado_solicitud NOT NULL DEFAULT 'pendiente',
+	fecha_solicitud TIMESTAMP NOT NULL DEFAULT NOW(),
+	fecha_revision TIMESTAMP
+);
 
 COMMIT ;

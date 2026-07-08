@@ -158,4 +158,5 @@ CREATE TABLE DocenteEspera (
 	fecha_solicitud TIMESTAMP NOT NULL DEFAULT NOW(),
 	fecha_revision TIMESTAMP
 );
+
 COMMIT ;

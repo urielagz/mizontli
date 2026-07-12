@@ -1,0 +1,140 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    height:100vh;
+    padding-left:100px; 
+}
+
+.login{
+    width:350px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.login h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.login label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.login input{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+.enlace{
+    display:block;
+    text-align:right;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:#bb00cc;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#c900cc;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#9e0094;
+}
+
+.login p{
+    text-align:center;
+    margin-top:20px;
+}
+
+.login p a{
+    color:#cc00c9;
+    text-decoration:none;
+    font-weight:bold;
+}
+.registro{
+    width:350px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.registro h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.registro label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.registro input{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+.registro button{
+    width:100%;
+    padding:12px;
+    background:#cc00a3;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.registro button:hover{
+    background:#9e0094;
+}
+
+.registro p{
+    text-align:center;
+    margin-top:20px;
+}
+
+.registro p a{
+    color:#cc00c9;
+    text-decoration:none;
+    font-weight:bold;
+}
+select{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+    font-size:15px;
+}
+
+input[type="file"]{
+    width:100%;
+    margin-bottom:15px;
+}

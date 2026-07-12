@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/diesño.css">
+</head>
+<body>
+<div class="registro">
+    <h2>Crear cuenta</h2>
+
+    <label>Nombre</label>
+    <input type="text" placeholder="Ingresa tu nombre">
+
+    <label>Apellido</label>
+    <input type="text" placeholder="Ingresa tu apellido">
+
+    <label>Email</label>
+    <input type="email" placeholder="Ingresa tu correo">
+
+    <label>Rol</label>
+    <select id="rol" onchange="mostrarPDF()">
+        <option value="">Selecciona un rol</option>
+        <option value="Alumno">Alumno</option>
+        <option value="Maestro">Maestro</option>
+    </select>
+
+    <div id="pdf" style="display:none;">
+        <label>Subir constancia o certificado (PDF)</label>
+        <input type="file" accept=".pdf" multiple>
+    </div>
+
+    <label>Contraseña</label>
+    <input type="password" placeholder="Crea una contraseña">
+
+    <label>Confirmar contraseña</label>
+    <input type="password" placeholder="Confirma tu contraseña">
+
+    <button>Registrarse</button>
+
+    <p>¿Ya tienes una cuenta? <a href="../html/login.html">Iniciar sesión</a></p>
+</div>
+<script src="../js/registro.js"></script>
+</div>
+</body>
+</html>

@@ -10,6 +10,9 @@ import temaRoutes from "./routes/tema.routes";
 import usuarioRoutes from "./routes/usuario.routes";
 import loginRoutes from "./routes/login.routes";
 import docenteRoutes from "./routes/docente.routes";
+import publicacionRoutes from "./routes/publicacion.routes";
+import comentarioRoutes from "./routes/comentario.routes";
+
 // ...
 
 const app = express();
@@ -28,4 +31,7 @@ app.use("/usuarios", usuarioRoutes);
 app.use("/login", loginRoutes);
 app.use("/entregas", entregaRoutes);
 app.use("/docentes", docenteRoutes);
+// ...
+app.use("/publicaciones", publicacionRoutes);
+app.use("/comentarios", comentarioRoutes);
 export default app;

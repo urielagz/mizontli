@@ -7,6 +7,9 @@ BEGIN;
 CREATE TYPE rol_usuario AS ENUM ('alumno', 'docente', 'admin');
 CREATE TYPE tipo_recurso AS ENUM ('informacion','documento','video','enlace');
 CREATE TYPE tipo_notificacion AS ENUM ('actividad','evaluacion','comentario');
+CREATE TYPE tipo_publicacion AS ENUM ('pregunta', 'recurso', 'general');
+
+
 --=============================
 --Creacion Tabla Usuario
 CREATE TABLE Usuario (
@@ -154,5 +157,6 @@ CREATE TABLE DocenteEspera (
 	fecha_solicitud TIMESTAMP NOT NULL DEFAULT NOW(),
 	fecha_revision TIMESTAMP
 );
-
+ALTER TABLE Publicacion ADD COLUMN id_materia INTEGER REFERENCES Materia(id_materia) ON DELETE SET NULL;
+ALTER TABLE Publicacion ADD COLUMN tipo tipo_publicacion NOT NULL DEFAULT 'general';
 COMMIT ;
